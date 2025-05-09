@@ -2,8 +2,7 @@
 node_modules/
 
 # Compiled WebAssembly files
-*.wasm
-*.out.js
+/bin
 
 # Build output directories
 /dist/

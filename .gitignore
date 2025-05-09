@@ -1,0 +1,43 @@
+# Node.js dependencies
+node_modules/
+
+# Compiled WebAssembly files
+*.wasm
+*.out.js
+
+# Build output directories
+/dist/
+/build/
+/target/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor-specific files
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*.swo
+*.bak
+
+# Rust specific (if using Rust for WASM)
+/Cargo.lock
+/Cargo.toml
+/target/
+
+# CMake specific (if using CMake for WASM)
+CMakeLists.txt.user
+CMakeFiles/
+Makefile.user
+
+# Other possible outputs or logs from compilers or bundlers
+*.out
+*.log

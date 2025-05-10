@@ -1,18 +1,12 @@
-let calculate = Module.cwrap(
-    "calculate", // name of C function
-    "number", // return type
-    ["number", "number"] // argument types
-)
-
-let subtract = Module.cwrap(
-    "subtract", // name of C function
-    "number", // return type
-    ["number", "number"] // argument types
-)
+let exports;
+WebAssembly.instantiateStreaming(
+    fetch("bin/streaming.wasm"), {}
+).then(results => exports = results.instance.exports);
 
 function run_wasm() {
-    const numA = document.querySelector("#a").value;
-    const numB = document.querySelector("#b").value;
+    const result = document.getElementById("result");
+    const numA = document.getElementById("a").value;
+    let sum = exports.sumOfNInts(numA);
 
-    console.log("Result from WASM: " + subtract(numA, numB));
+    result.innerHTML += `Sum of first ${numA} integers is: ${sum}<br/>`;
 }
